@@ -15,7 +15,7 @@ class LoginPage:
         self.browser = None
 
     def get_driver_instance(self, browser_name):
-        if conf.browser == 'Chrome':
+        if conf.browser.lower() == 'Chrome'.lower():
             self.browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         if conf.browser == 'Firefox':
             self.browser = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
